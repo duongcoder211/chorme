@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Assets/icons/darkgrey-chrome-icon.png" type="image/x-icon" >
+    <link rel="stylesheet" href="./Chrome/chrome.css">
+    <title>New Tab</title>
+</head>
+<body>
+    <div class="chrome">
+        <div class="navigation">
+            <a href="" class="gmail" target="_blank">Gmail</a>
+            <a href="" class="images" target="_blank">Images</a>
+            <a href="" class="search-lab" target="_blank">
+                <img src="Assets/icons/search-lab.png" alt="Search Labs">
+            </a>
+            <a href="" class="google-apps" target="_blank">
+                <img src="Assets/icons/apps.svg" alt="Google apps">
+            </a>
+            <div class="google-account">
+                <img src="Assets/icons/Profile.jpg" alt="Google Account">
+            </div>
+        </div>
+    
+    <div class="name"><img src="Assets/icons/google.svg" alt="Google"></div>
+
+    <div class="search-bar">
+        <div class="group-1">
+            <div class="search-icon"><img src="Assets/icons/search-outline.png" alt=""></div>
+            <div class="seach-input">
+                <input type="text" placeholder="Search Google or type a URL" autofocus>
+            </div>
+        </div>
+        <div class="group-2">
+            <div class="google-mic">
+                <img src="Assets/icons/google-micro.png" alt="">
+            </div>
+            <div class="google-lens">
+                <img src="Assets/icons/google-lens.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="shortcut-list">
+        <a href="https://www.youtube.com/">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="Assets/icons/favicon-youtube.png" alt="">
+                </div>
+                <p class="title">Youtube</p>
+            </div>
+        </a>
+        <a href="https://mail.google.com/mail/u/0/#inbox">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="Assets/icons/favicon-gmail.png" alt="">
+                </div>
+                <p class="title">Gmail</p>
+            </div>
+        </a>
+        <a href="https://drive.google.com/drive/u/0/home?ths=true">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="Assets/icons/favicon-ggdriver.png" alt="">
+                </div>
+                <p class="title">Google Driver</p>
+            </div>
+        </a>
+        <a href="./Tiếng Nga web/Từ vựng tiếng Nga theo chủ đề - Học tiếng Nga cơ bản.html">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="Assets/icons/favicon2_.png" alt="">
+                </div>
+                <p class="title">Học Tiếng Nga</p>
+            </div>
+        </a>
+
+        <a href="./Facebook/searchq_facebook-oq-fa-gs_lcrp-EgZjaHJvbWUqDwgAEEUYOxiDARixAxiABDIPCAAQRRg7GIMBGLEDGIAEMgYIARBFGDsyBggCEEUYOzIGCAMQRRhAMgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxAFGEDSAQgxMDUzajBqN6gCALACAA-sourceid-chrome-ie-UTF-8.html">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="./Facebook/assets/fb-ico.ico" alt="">
+                </div>
+                <p class="title">Facebook</p>
+            </div>
+        </a>
+        
+        <a href="./phone/phone.html">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="./Phone/assets/pics/iphone-x.png" alt="">
+                </div>
+                <p class="title">Iphone</p>
+            </div>
+        </a>
+        
+        <a href="./GameFlappyBird/FlappyBird.html">
+            <div class="shortcut" draggable="true">
+                <div class="thumb">
+                    <img src="GameFlappyBird/FlappyBirdAssets/Game Objects/yellowbird-midflap.png" alt="">
+                </div>
+                <div class="title">Game Flappy Bird</div>
+            </div>
+        </a>
+
+        <div class="shortcut" id="add-shortcut">
+            <div class="thumb">
+                <img src="Assets/icons/add.svg" alt="">
+            </div>
+            <p class="title">Add shortcut</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="customize-chrome">
+            <img src="Assets/icons/icon_pencil.svg" alt="">
+            <p>Customize Chrome</p>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+<script>
+    let chromeElm = document.querySelector(".chrome");
+    let searchbarElm = document.querySelector(".seach-input");
+    let searchInputElm = searchbarElm.querySelector("input");
+    let playAudio = function () {
+        let hahaSound = chromeElm.querySelector(".haha-sound");
+        hahaSound.load();
+        hahaSound.play();
+    }
+
+    document.onkeydown = (e) => {
+        if(e.code == "Enter") {
+            // Code
+        }
+    }
+    
+
+</script>
+</html>

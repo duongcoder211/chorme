@@ -1,0 +1,558 @@
+body {
+    background-color: #383333;
+    user-select: none;
+}
+
+:root {
+    --phone-width : 300px;
+    --phone-height : 600px;
+    --screen-border-radius : 28px;
+    --wrapped-border-radius : 20px;
+    --phone-color: rgb(217, 180, 251);
+    --font-text: Arial, Helvetica, sans-serif;
+}
+
+* {
+    font-family: var(--font-text);
+}
+
+.phone {
+    width: var(--phone-width);
+    height: var(--phone-height);
+    background-color: rgb(0, 0, 0);
+    margin:  30px auto;
+    border-radius: var(--screen-border-radius);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 0 2px #000000, 0 0 0 4px var(--phone-color);
+}
+
+.phone .power-button {
+    width: 3px;
+    height: 10%;
+    background-color: var(--phone-color);
+    position: absolute;
+    right: -6px;
+    top: 22%;
+}
+
+.phone .power-button::before {
+    content: "Power";
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #fff;
+    background-color: #577e44;
+    position: absolute;
+    right: -54px;
+    top: 14px;
+    border-radius: 10px;
+}
+
+.mute-button {
+    width: 3px;
+    height: 3%;
+    background-color: var(--phone-color);
+    position: absolute;
+    left: -6px;
+    top: 14%;
+}
+
+.mute-button::before {
+    content: "Mute";
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #fff;
+    background-color: #577e44;
+    position: absolute;
+    left: -54px;
+    top: -6px;
+    border-radius: 10px;
+}
+
+.increase-sound-button {
+    width: 3px;
+    height: 7%;
+    background-color: var(--phone-color);
+    position: absolute;
+    left: -6px;
+    top: 20%;
+}
+
+.increase-sound-button::before {
+    content: "Increase Volume";
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    background-color: #577e44;
+    position: absolute;
+    left: -54px;
+    top: 6px;
+    border-radius: 10px;
+}
+.decrease-sound-button {
+    width: 3px;
+    height: 7%;
+    background-color: var(--phone-color);
+    position: absolute;
+    left: -6px;
+    top: 29%;
+}
+
+.decrease-sound-button::before {
+    content: "Decrease Volume";
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+    background-color: #577e44;
+    position: absolute;
+    left: -54px;
+    top: 6px;
+    border-radius: 10px;
+}
+ 
+.volume-bar {
+    position: absolute;
+    background-color: #8f8e8e;
+    width: 4px;
+    height: 16%;
+    left: 3px;
+    top: 20%;
+    border-radius: 2px;
+    transition: 0.25s linear;
+    visibility: hidden;
+}
+
+.volume-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: inherit;
+    transition: 0.1s linear;
+}
+
+.navigator {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: var(--phone-width);
+    height: 4%;
+    margin-top: 2px;
+    justify-content: space-between;
+    border-radius: var(--screen-border-radius) var(--screen-border-radius) 0 0;
+}
+
+.left-ear {
+    margin: 3% 10%;
+    text-align: end;
+}
+
+.sms-name {
+    margin: 0 0 0 -10px;
+    color: white;
+    font-size: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.right-ear {
+    display: flex;
+    width: 26%;
+    height: 100%;
+    position: absolute;
+    right: 8%;
+    justify-content: right;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.item {
+    display: flex;
+    width: 14px;
+    height: 14px;
+    align-self: flex-end;
+}
+
+#battery {
+    width: 14px;
+    height: 7px;
+    margin-bottom: 1.5px;
+    position: relative;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+}
+
+#battery::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 4px;
+    right: -2px;
+    background-color: #fff;
+}
+
+#battery-progress {
+    position: absolute;
+    width: 72%;
+    max-width: 90%;
+    height: 80%;
+    left: 1px;
+    background-color: #fff;
+}
+
+.screen {
+    width: var(--phone-width);
+    height: var(--phone-height);
+    border-radius: var(--screen-border-radius);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /* display: none; */
+    /* Tat man hinh */
+}
+
+/* here */
+.background-phone {
+    image-rendering: 50%;
+    overflow: hidden;
+    border-radius: var(--screen-border-radius);
+    /* visibility: hidden; */
+    /* Tat hinh nen */
+}
+
+.background-phone img {
+    width: var(--phone-width);
+    height: var(--phone-height);
+    object-fit: cover;
+    border-radius: var(--screen-border-radius);
+}
+
+.time-today{
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top: 14%;
+    width: 100%;
+    height: 18%;
+    color: #ffff;
+}
+
+.phone-time{
+    font-size: 48px;
+    margin-top: 0 auto;
+}
+
+.phone-date{
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.wrapped {
+    width: 90%;
+    height: 8%;
+    position: absolute;
+    bottom: 2%;
+    display: flex;
+    box-shadow: 0 0 2px 0 #ffffffdc;
+    border-radius: var(--wrapped-border-radius);
+    font-size: 34px;
+    justify-content: space-around;
+    padding: 6px;
+    align-items: center;
+}
+
+.app {
+    display: flex;
+    width: 12%;
+    padding: 6px;
+    background-color: #99fc75;
+    border-radius: 10px;
+}
+.app img {
+    width: 100%;
+    object-fit: contain;
+}
+
+h1 {
+    color: #000000;
+    font-size: 40px;
+    margin: 70% auto;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bass {
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    border-radius: 0 0 32% 32%;
+    background-color: #000000;
+    z-index: 1;
+}
+
+
+.dynamic-island {
+    /* width:  64%;
+    height: 18%; */
+
+    width:  30%;
+    height: 4%;
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 1%;
+    transition: 0.25s linear;
+    z-index: 9999;
+}
+
+.status {
+    position: absolute;
+    transition: 0.25s linear;
+    top: 18%;
+    left: 12%;
+}
+
+.status .status-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.status-mic {
+    position: absolute;
+    transition: 0.25s linear;
+    top: 4px;
+    left: 36%;
+    width: 20px;
+    height: 20px;
+}
+
+.status-mic img {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+}
+
+.status-mute {
+    position: absolute;
+    transition: 0.25s linear;
+    top: 18%;
+    left: 56%;
+    width: 20px;
+    height: 20px;
+}
+
+.status-mute img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.wrapper_dynamic-island {
+    visibility: hidden;
+}
+
+.song-name_dynamic-island {
+    width: 80%;
+    height: 20%;
+    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.control-bar_dynamic-island {
+    width: 80%;
+    height: 30%;
+    border-radius: 5px;
+    align-self: center;
+    position: absolute;
+    top: 56%;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.control-bar_dynamic-island div {
+    width: 26%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.control-bar_dynamic-island img {
+    width: 20px;
+    object-fit: contain;
+}
+
+.camera {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    position: absolute;
+    top: 2%;
+    left: 58%;
+    background-color: rgb(31, 29, 29);
+    z-index: 99999;
+}
+
+.homeBar {
+    width: 34%;
+    height: 3px;
+    transition : 0.5s linear;
+    border-radius: 10px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 2px;
+    z-index: 9999;
+    display: block;
+}
+
+.homeBar::before {
+    content: "";
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+}
+
+/* Music app */
+
+.music-app {
+    width: var(--phone-width);
+    height: var(--phone-height);
+    margin: 0 auto;
+    padding: 0;
+    border-radius: var(--screen-border-radius);
+    background-color: rgb(152, 238, 226);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.main-thumbnail {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 20% auto;
+    position: relative;
+    background-image: linear-gradient(to right bottom,#868686,#563289,#863489);
+    /* transition: 0.25s linear; */
+}
+
+.main-img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    object-fit: contain;
+    top: 50px;
+    left: calc(50% - (50px));
+}
+
+
+.music-control {
+    width: 90%;
+    position: absolute;
+    top: 72%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 5%;
+    background-color: rgb(97, 195, 219);
+    border-radius: 8px;
+}
+
+.music-control div {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.music-control img {
+    width: 58%;
+}
+
+.song-time {
+    display: inline-flex;
+    font-size: 10px;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 66%;
+    width: 100%;
+    justify-content: space-around;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.song-current-time,.song-total-time {
+    width: 30px;
+}
+
+.progress-bar {
+    font-size: 16px;
+    width: 66%;
+    height: 8px;
+    margin-top: 2px;
+}
+.song-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    height: 38px;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.author {
+    margin-top: 6px;
+    height: 24px;
+    font-size: 12px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.song-infor {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 10%;
+    top: 52%;
+    line-height: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}

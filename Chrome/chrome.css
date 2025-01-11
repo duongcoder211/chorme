@@ -1,0 +1,220 @@
+:root {
+    --font-color: #041e49;
+    --background-shortcut-color: #e1e3e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1100px) {
+    .search-bar {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1920px) {
+    .search-bar {
+        width: 50%;
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    font-size: 13px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #5f6368;
+}
+
+.navigation img {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
+
+.google-account img {
+    width: 32px;
+    height: 32px;
+}
+
+.name {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.name img {
+    width: 270px;
+}
+
+.search-bar {
+    display: flex;
+    height: 49px;
+    margin: 40px auto 16px;
+    justify-content: space-between;
+    border-radius: 50px;
+    box-shadow: #00000048 0px 0px 5px 0px;
+}
+
+.search-bar .group-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    gap: 10px;
+    flex-grow: 1;
+}
+.search-bar .group-2 {
+    display: flex;
+    justify-items: left;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+}
+
+.search-bar img {
+    width: 24px;
+    height: 24px;
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.seach-input {
+    flex-grow: 1;
+}
+
+.seach-input input{
+    border: none;
+    outline: none;
+    width: 100%;
+    color: var(--font-color);
+    font-size: 16px;
+}
+
+.shortcut-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.shortcut-list a {
+    text-decoration: none;
+    color: #000000cb;
+}
+
+.shortcut-list a:visited {
+    color: unset;
+}
+
+.shortcut-list .shortcut {
+    width: 112px;
+    height: 112px;
+    text-align: center;
+    display: flexbox;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.shortcut-list .shortcut:hover {
+    background-color: #b7bcc1a3;
+}
+
+.shortcut-list a .shortcut .thumb {
+    padding: 12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%; 
+    background-color: var(--background-shortcut-color);
+    margin: 0 auto;
+    margin-bottom: 14px;
+}
+
+.shortcut-list a .shortcut img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: flexbox;
+    align-content: center;
+    justify-content: center;
+}
+
+/* phải có dấu cách ở giữa 2 phần tử */
+#add-shortcut .thumb {
+    padding: 12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%; 
+    margin: 0 auto;
+    margin-bottom: 14px;
+    background-color: #d3e3fd;
+}
+
+.shortcut-list .title {
+    /* Giới hạn 1 hàng */
+    /* width: 112px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; */
+    /* Chuyển phần ẩn thành dấu 3 chấm, 1 hàng */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Xuống dòng chữ liền dài */
+    /* word-wrap: break-word; */
+}
+
+/* fix cứng */
+/* .shortcut {
+    display: block;
+    width: 24px;
+    height: 24px;
+    } */
+    
+.footer {
+    display: flex;
+    justify-content: right;
+    position: fixed;
+    bottom: 18px;
+    right: 16px;
+}
+
+.customize-chrome {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 6px;
+    padding: 8px 20px;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: #d3e3fd;
+    color: #000000ca;
+    box-shadow: #b9b9b9 0px 1px 3px 0px;
+    font-size: 14px;
+}
+
+.customize-chrome img {
+    width: 16px;
+    height: 16px;
+}

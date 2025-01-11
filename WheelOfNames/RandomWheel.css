@@ -1,0 +1,56 @@
+:root {
+    --wheel-size: 600px;
+    --center-size: 80px;
+    --arrow-height: 30px;
+}
+
+.app {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 30px;
+}
+
+.wheel-area {
+    margin: 80px 0 0 200px;
+    display: flex;
+}
+
+.wheel {
+    width: var(--wheel-size);
+    height: var(--wheel-size);
+    border-radius: 100%;
+    background-image: linear-gradient(to right, #6283, #8745);
+    position: relative;
+}
+
+.center {
+    width: var(--center-size);
+    height: var(--center-size);
+    position: absolute;
+    top: calc(50% - var(--center-size)/2);
+    left: calc(50% - var(--center-size)/2);
+    border-radius: 100%;
+    background-color: whitesmoke;
+    font-size: 30px;
+    align-content: center;
+    text-align: center;
+    color: rgb(244, 42, 146);
+}
+
+.input-area {
+    flex-grow: 1;
+}
+
+.input-area .label {
+    margin-left: 50px;
+}
+
+.arrow {
+    width: 60px;
+    height: var(--arrow-height);
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+    background-color: black;
+    position: relative;
+    top: calc(50% - calc(var(--arrow-height)/2));
+    left: -20px;
+}

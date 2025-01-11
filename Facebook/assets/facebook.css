@@ -1,0 +1,184 @@
+:root {
+    --background-color: #f2f4f7;
+    --fb-color: #0866ff;
+    --loginbutton-color: #42b72a;
+    --loginboard-color: #fff;
+    --text-color: #1c1e21;
+    --footer-color: #8a8d91;
+}
+/* padding, magin tính từ phần khối
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    position: relative;
+    user-select: none;
+    margin: 0;
+}
+.wrapper {
+    margin-top: 16%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+}
+
+
+.intro {
+    font-size: 20px;
+}
+
+.name {
+    color: var(--fb-color);
+    font-size: 50px;
+    margin-bottom: 8px;
+}
+
+.slogan {
+    margin-top: 20px;
+}
+
+.loginboard {
+    height: 80%;
+}
+
+.inputboard {
+    background-color: #fff;
+    width: 290px;
+    padding: 10px 10px 10px 10px;
+    display: flexbox;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: #8a8d9171 0px 0px 5px 1px;
+}
+
+.inputboard::before {
+    content: "";
+    width: 93%;
+    height: 1.5px;
+    background-color: #f2f4f7;
+    position: absolute;
+    bottom: 22%;
+}
+
+.account {
+    width: 91%;
+    height: 30px;
+    border: 2px solid #f2f4f7;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+}
+
+.password {
+    width: 91%;
+    height: 30px;
+    border: 2px solid #f2f4f7;
+    /* box-shadow: var(--background-color) 0 0 0 1px; */
+    border-radius: 3px;
+    outline: none;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+}
+
+.login-button {
+    background-color: var(--fb-color);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 12px 0;
+    margin-top: 6px;
+}
+
+.forget-password{
+    font-size: 12px;
+    display: block;
+    color: var(--fb-color);
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.create-account-button {
+    background-color: var(--loginbutton-color);
+    border-radius: 3px;
+    padding: 8px 9px;
+    width: fit-content;
+    margin: 10% auto 0;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.makepage {
+    font-size: 11px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.makepage a {
+    color: #1c1e21;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer {
+    position: relative;
+    height: 230px;
+    margin-top: 22%;
+    background-color: #fff;
+    display: flexbox;
+    align-content: center;
+    padding-left: 16%;
+}
+
+.languages {
+    margin: 0;
+    width:fit-content;
+    color: var(--footer-color);
+    font-size: 12px;
+}
+
+.languages span {
+    padding: 0 12px 0 0;
+}
+
+.utilities {
+    margin: 0px 0 18px 0;
+    display: flex;
+    max-width: 90%;
+    min-width: 60%;
+    color: var(--footer-color);
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.utilities::before {
+    content: "";
+    width: 97%;
+    height: 1px;;
+    background-color: var(--footer-color);
+    display: block;
+    margin: 18px 0;
+    position: relative;
+}
+
+.copyright {
+    margin-top: 20px;
+    color: var(--footer-color);
+    font-size: 12px;
+}
+
+

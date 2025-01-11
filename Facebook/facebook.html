@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/fb-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/facebook.css">
+    <title>Facebook - Đăng nhập hoặc đăng ký</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="intro">
+            <h1 class="name">facebook</h1>
+            <span class="slogan">Facebook giúp bạn kết nối và chia sẻ </br>
+                với mọi người trong cuộc sống của bạn.
+            </span>
+        </div>
+        <div class="loginboard">
+            <div class="inputboard">
+                <input type="text" class="account" placeholder="Email hoặc số điện thoại"></br>
+                <input type="password" class="password" placeholder="Mật khẩu">
+                <div class="login-button">Đăng nhập</div>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="forget-password">Quên mật khẩu?</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer" class="create-account-button">Tạo tài khoản mới</a>
+            </div>
+            <div class="makepage"><a href="http://" target="_blank" rel="noopener noreferrer">Tạo Trang</a> dành cho người nổi tiếng, thương hiệu hoặc doanh </br> nghiệp.</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="languages">
+            <span class="vietnam">Tiếng Việt</span>
+            <span class="english">English(UK)</span>
+            <span class="china">中文(台灣)</span>
+            <span class="korea">한국어</span>
+            <span class="japan">日本語</span>
+            <span class="france">Français (France)</span>
+            <span class="thailand">ภาษาไทย</span>
+            <span class="Spanish">Español</span>
+            <span class="germany">Deutsch</span>
+            <span class="italia">Italiano</span>
+        </div>
+        
+        <div class="utilities">
+            <span class="signup">Đăng ký</span>
+            <span class="login">Đăng nhập</span>
+            <span class="messenger">Messenger</span>
+            <span class="facebook-lite">Facebook Lite</span>
+            <span class="video">Video</span>
+            <span class="location">Địa điểm</span>
+            <span class="game">Trò chơi</span>
+            <span class="marketplace">Marketplace</span>
+            <span class="metapay">Meta Pay</span>
+            <span class="shop-on-meta">Cửa hàng trên Meta</span>
+            <span class="metaquest">Meta Quest</span>
+            <span class="raybanmeta">Ray-Ban Meta</span>
+            <span class="metaAI">Meta AI</span>
+            <span class="instagram">Instagram</span>
+            <span class="threads">Threads</span>
+            <span class="campaign">Chiến dịch gây quỹ</span>
+            <span class="service">Dịch vụ</span>
+            <span class="center">Trung tâm thông tin bỏ phiếu</span>
+            <span class="privacy-policy">Chính sách quyền riêng tư</span>
+            <span class="privacy-center">Trung tâm quyền riêng tư</span>
+            <span class="group">Nhóm</span>
+            <span class="introduce">Giới thiệu</span>
+            <span class="create-ads">Tạo quảng cáo</span>
+            <span class="create-page">Tạo Trang</span>
+            <span class="developer">Nhà phát triển</span>
+            <span class="recruitment">Tuyển dụng</span>
+            <span class="cookie">Cookie</span>
+            <span class="choose-ads">Lựa chọn quảng cáo</span>
+            <span class="clause">Điều khoản</span>
+            <span class="help">Trợ giúp</span>
+            <span class="clause">Tải thông tin liên hệ lên & đối tượng không phải người dùng</span>
+        </div>
+
+        <div class="copyright">Meta © 2024</div>
+    </div>
+    <script>
+        let loginBtn = document.querySelector('.login-button');
+        let accountInput = document.querySelector('.account');
+        let passwordInput = document.querySelector('.password');
+        let footer = document.querySelector('.footer');
+        let elementsFooter = footer.querySelectorAll("span");
+
+        elementsFooter.forEach((e) => {
+            e.addEventListener("mouseover", () => {
+                e.style.textDecoration = "underline";
+            })
+
+            e.addEventListener("mouseleave", () => {
+                e.style.textDecoration = "none";
+            }
+
+        )});
+
+
+        loginBtn.onclick = () => {
+            var account = `Account: ${accountInput.value};`;
+            var password = `Password: ${passwordInput.value}`;
+
+            // Dữ liệu bạn muốn lưu
+            const data = [account,password];
+            const blob = new Blob([data], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+
+            // Tạo một liên kết để tải xuống
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.txt';
+            document.body.appendChild(a);
+            a.click();
+
+            // Dọn dẹp
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script> 
+ 
+    <!-- <script type="module" src="./facebook.js"></script> -->
+</body>
+</html>
