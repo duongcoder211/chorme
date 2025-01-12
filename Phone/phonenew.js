@@ -193,7 +193,7 @@ let makeTimeToday = function () {
     let day = date.getDay() + 1;
     let hour = date.getHours();
     let minute = date.getMinutes();
-    day == 8 ? day = "Chủ nhật" : day = 'Thứ ' + day;
+    day == 1 ? day = "Chủ nhật" : day = 'Thứ ' + day;
     hour.toString().length < 2 ? hour = "0" + hour : hour = hour;
     minute.toString().length < 2 ? minute = "0" + minute : minute = minute;
     timeTodayElm.innerHTML = `
