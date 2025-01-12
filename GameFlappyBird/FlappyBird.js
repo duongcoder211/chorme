@@ -119,6 +119,12 @@ function run () {
     requestAnimationFrame(run);
 }
 // Handling
+    document.addEventListener("click", function() {
+        wingSound.load();
+        wingSound.play();
+        bird.y -= 52;
+})
+
     document.addEventListener("keydown", function(e) {
     switch(e.keyCode) {
         case 32: 
