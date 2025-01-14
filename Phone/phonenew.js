@@ -335,7 +335,7 @@ increaseVolumeBtn.onclick = () => {
 decreaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
     if(currentVolume >= 0.1) {currentVolume -= 0.1; currentSong.volume = currentVolume;};
-    volumeProgressElm.style.height = `${currentSong.volume * 100}%`;
+    volumeProgressElm.style.height = `${currentVolume * 100}%`;
     setTimeout(() => {
         hideVolumeBarElm();
     },5000)
