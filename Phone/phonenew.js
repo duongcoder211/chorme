@@ -168,6 +168,7 @@ let typeLoop = 0;
 let mainThumbnail;
 let angleMainThumnail = 0;
 let rotateThumnailId;
+let isOpenApp = false;
 let isShuffleSong = false;
 let isPlaySong = false;
 let isMute = false;
@@ -181,10 +182,12 @@ let hideScreen = function () {
     if(isPhoneOn) {
         screen.style.visibility = "visible";
         dynamicIsland.style.backgroundColor = "#000";
+        if(isOpenApp) { runMusicApp() }
     }
     else {
         screen.style.visibility = "hidden";
         dynamicIsland.style.backgroundColor = "#8f8e8e";
+        hideMusicApp();
     }
 }
 
@@ -193,7 +196,7 @@ let makeTimeToday = function () {
     let day = date.getDay() + 1;
     let hour = date.getHours();
     let minute = date.getMinutes();
-    day == 1 ? day = "Chủ nhật" : day = 'Thứ ' + day;
+    day == 8 ? day = "Chủ nhật" : day = 'Thứ ' + day;
     hour.toString().length < 2 ? hour = "0" + hour : hour = hour;
     minute.toString().length < 2 ? minute = "0" + minute : minute = minute;
     timeTodayElm.innerHTML = `
@@ -207,7 +210,7 @@ setInterval(() => {makeTimeToday();},500)
 
 // <-------------------Phone-------------------->
 // Power
-powerBtn.addEventListener('click', () => hideScreen());
+powerBtn.addEventListener('click', () => {hideScreen()});
 
 // Dinamic island
 let dynamicIslandOn = function () {
@@ -273,11 +276,13 @@ chargingBattery();
 
 // Home bar
 let homeBarActive = function () {
+    isOpenApp = !isOpenApp;
     homeBar.style.transform = "translateY(-4px)";
 }
 
 let homeBarDisable = function () {
-    musicApp.style.visibility = "hidden";
+    // musicApp.style.visibility = "hidden";
+    hideMusicApp();
     homeBar.style.transform = "translateY(0)";
 }
 
@@ -471,8 +476,13 @@ let runMusicApp = function () {
     mainThumbnail = musicApp.querySelector(".main-thumbnail");
     musicApp.style.visibility = "visible";
 }
+let hideMusicApp = function () {
+    mainThumbnail = musicApp.querySelector(".main-thumbnail");
+    musicApp.style.visibility = "hidden";
+}
 
 musicAppBtn.addEventListener('click',() => {
+    isOpenApp = !isOpenApp;
     runMusicApp();
 })
 
