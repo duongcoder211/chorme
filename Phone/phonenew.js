@@ -170,6 +170,7 @@ let angleMainThumnail = 0;
 let rotateThumnailId;
 let isOpenApp = false;
 let isShuffleSong = false;
+let currentVolume = 1;
 let isPlaySong = false;
 let isMute = false;
 let currenTimeElm = document.querySelector(".song-current-time");
@@ -324,8 +325,8 @@ let hideVolumeBarElm = function() {
 
 increaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentSong.volume < 1) currentSong.volume += 0.1;
-    volumeProgressElm.style.height = `${currentSong.volume.toFixed(1) * 100}%`;
+    if(currentVolume <= 0.9) {currentVolume += 0.1; currentSong.volume = currentVolume;};
+    volumeProgressElm.style.height = `${currentVolume * 100}%`;
     setTimeout(() => {
         hideVolumeBarElm()
     },5000)
@@ -333,8 +334,8 @@ increaseVolumeBtn.onclick = () => {
 
 decreaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentSong.volume > 0.1) currentSong.volume -= 0.1;
-    volumeProgressElm.style.height = `${currentSong.volume.toFixed(1) * 100}%`;
+    if(currentVolume >= 0.1) {currentVolume -= 0.1; currentSong.volume = currentVolume;};
+    volumeProgressElm.style.height = `${currentSong.volume * 100}%`;
     setTimeout(() => {
         hideVolumeBarElm();
     },5000)
