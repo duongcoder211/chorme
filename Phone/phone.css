@@ -73,6 +73,7 @@ body {
     top: 20%;
     border-radius: 2px;
     transition: 0.25s linear;
+    z-index: 99999;
     visibility: hidden;
 }
 
