@@ -495,11 +495,11 @@ musicAppBtn.addEventListener('click',() => {
 
 
 musicControlBtn.forEach((btn) => {
-    btn.addEventListener("mouseover", () => {
+    btn.addEventListener("mousedown", () => {
         btn.style.backgroundColor = "#8d66da";
         btn.style.borderRadius = "inherit";
     })
-    btn.addEventListener("mouseleave", () => {
+    btn.addEventListener("mouseup", () => {
         btn.style.backgroundColor = "unset";
     })
 })
