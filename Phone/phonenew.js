@@ -160,10 +160,12 @@ let songDuration;
 let musicControlElm = document.querySelector(".music-control");
 let musicControlBtn = musicControlElm.querySelectorAll("div");
 let shuffleSongBtn = document.querySelector(".shuffle-song");
+let shuffleSongIco = shuffleSongBtn.querySelector("#shuffle-song");
 let backSongBtns = document.querySelectorAll(".back-song");
 let playSongBtns = document.querySelectorAll(".play-song");
 let nextSongBtns = document.querySelectorAll(".next-song");
 let repeatSongBtn = document.querySelector(".repeat-song");
+let repeatSongIco = repeatSongBtn.querySelector("#repeat-song");
 let typeLoop = 0;
 let mainThumbnail;
 let angleMainThumnail = 0;
@@ -516,11 +518,11 @@ backSongBtns.forEach((btn) => {
 shuffleSongBtn.addEventListener("click", () => {
     isShuffleSong = !isShuffleSong;
     if(isShuffleSong) {
-        shuffleSongBtn.innerHTML = `<img src="./assets/color-icon/shuffle-colorful-svgrepo-com.svg" alt="">`
+        shuffleSongIco.src = `./assets/color-icon/shuffle-colorful-svgrepo-com.svg`;
         shuffleSong();
     }
     else{
-        shuffleSongBtn.innerHTML = `<img src="./assets/white-icon/shuffle-svgrepo-com.svg" alt="">`
+        shuffleSongIco.src = `./assets/white-icon/shuffle-svgrepo-com.svg`;
     }
 })
 
@@ -529,15 +531,15 @@ repeatSongBtn.addEventListener("click", () => {
     typeLoop > 2 ? typeLoop = 0 : typeLoop =  typeLoop;
     switch(typeLoop) {
         case 0: {
-            repeatSongBtn.innerHTML = `<img src="./assets/white-icon/repeat-svgrepo-com.svg" alt="">`;
+            repeatSongIco.src = `./assets/white-icon/repeat-svgrepo-com.svg`;
             break;
         } 
         case 1: {
-            repeatSongBtn.innerHTML = `<img src="./assets/color-icon/repeat-one-svgrepo-com.svg" alt="">`;
+            repeatSongIco.src = `./assets/color-icon/repeat-one-svgrepo-com.svg`;
             break;
         }
         case 2: {
-            repeatSongBtn.innerHTML = `<img src="./assets/color-icon/repeat-infinite-svgrepo-com.svg" alt="">`;
+            repeatSongIco.src = `./assets/color-icon/repeat-infinite-svgrepo-com.svg`;
             break;
         }
     }
