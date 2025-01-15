@@ -474,7 +474,7 @@ h1 {
     overflow: hidden;
     text-overflow: ellipsis;
     text-wrap: nowrap;
-    word-break: keep-all;
+    flex-wrap: nowrap;
 }
 
 .author {
