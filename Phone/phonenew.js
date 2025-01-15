@@ -493,16 +493,6 @@ musicAppBtn.addEventListener('click',() => {
     runMusicApp();
 })
 
-
-musicControlBtn.forEach((btn) => {
-    btn.addEventListener("mousedown", () => {
-        btn.style.backgroundColor = "#8d66da";
-        btn.style.borderRadius = "inherit";
-    })
-    btn.addEventListener("mouseup", () => {
-        btn.style.backgroundColor = "unset";
-    })
-})
 playSongBtns.forEach((btn) => {
         btn.addEventListener('click' , () => {
         isPlaySong = !isPlaySong;
