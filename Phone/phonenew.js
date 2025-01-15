@@ -325,7 +325,10 @@ let hideVolumeBarElm = function() {
 
 increaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentVolume <= 0.9) {currentVolume += 0.1; currentSong.volume = currentVolume;};
+    if(currentVolume < 0.9 || currentVolume = 0.9) {
+        currentVolume += 0.1;
+        currentSong.volume = currentVolume;
+    };
     volumeProgressElm.style.height = `${currentVolume * 100}%`;
     setTimeout(() => {
         hideVolumeBarElm()
@@ -334,7 +337,10 @@ increaseVolumeBtn.onclick = () => {
 
 decreaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentVolume >= 0.1) {currentVolume -= 0.1; currentSong.volume = currentVolume;};
+    if(currentVolume > 0.1 || currentVolume = 0.1) {
+        currentVolume -= 0.1;
+        currentSong.volume = currentVolume;
+    };
     volumeProgressElm.style.height = `${currentVolume * 100}%`;
     setTimeout(() => {
         hideVolumeBarElm();
