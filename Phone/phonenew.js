@@ -325,7 +325,7 @@ let hideVolumeBarElm = function() {
 
 increaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentVolume < 0.9 || currentVolume = 0.9) {
+    if(currentVolume < 0.9 || currentVolume == 0.9) {
         currentVolume += 0.1;
         currentSong.volume = currentVolume;
     };
@@ -337,7 +337,7 @@ increaseVolumeBtn.onclick = () => {
 
 decreaseVolumeBtn.onclick = () => {
     displayVolumeBarElm();
-    if(currentVolume > 0.1 || currentVolume = 0.1) {
+    if(currentVolume > 0.1 || currentVolume == 0.1) {
         currentVolume -= 0.1;
         currentSong.volume = currentVolume;
     };
